@@ -9,15 +9,10 @@
 > We use 1D Convolutional Neural Networks within a Variational Monte Carlo (VMC) framework to approximate ground states of frustrated quantum spin chains.
 
 **Course:** Math 156 – Machine Learning (Fall 2025, UCLA)  
-**Team:** Qian Yunhan · Sebastian Seljak · Julieanna Li · Zirui (Ann) Zhou · Zhihao (Justin) Xie · Teo Manzo
 
----
+## Contributions
 
-## 🧑‍💻 My Contribution
-
-I was responsible for the **Supervised CNN baseline** — the core model that validates the neural network architecture before deploying the full unsupervised VMC system.
-
-Key work I did:
+**Supervised CNN baseline** — the core model that validates the neural network architecture before deploying the full unsupervised VMC system.
 
 - **Physics-informed input engineering:** Designed a 3-channel `(3 × 14)` input tensor that embeds spin configurations alongside J1 and J2 coupling constants, enabling the model to learn local energy contributions tied to specific Hamiltonian parameters
 - **CNN architecture design:** Built a 1D-CNN with two convolutional layers + Global Average Pooling + MLP regression head, achieving translational invariance consistent with the physics of spin chains
@@ -141,19 +136,6 @@ from physics.j1j2_solver import QuantumJ1J2Solver
 solver = QuantumJ1J2Solver(n_spins=10, J1=1.0, J2=0.5)
 print(f"Exact Ground State Energy: {solver.ground_state_energy}")
 ```
-
----
-
-## 👥 Contributors
-
-| Name | Contribution |
-|---|---|
-| **Qian Yunhan** | Supervised CNN (architecture, training, evaluation); unsupervised training logic & debugging |
-| **Sebastian Seljak** | Complex CNN architecture; hyperparameter tuning; large-N visualization |
-| **Julieanna Li** | Dataset generation; initial supervised + unsupervised CNN development |
-| **Zirui (Ann) Zhou** | EDA; CNN background writeup; Introduction |
-| **Zhihao (Justin) Xie** | Project lead; dataset development; supervised + unsupervised CNN |
-| **Teo Manzo** | Physics theory; VMC gradient derivations; Stochastic Reconfiguration |
 
 ---
 
