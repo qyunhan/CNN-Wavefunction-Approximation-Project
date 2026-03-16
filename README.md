@@ -8,21 +8,6 @@
 > A machine learning project at the intersection of deep learning and quantum many-body physics.  
 > We use 1D Convolutional Neural Networks within a Variational Monte Carlo (VMC) framework to approximate ground states of frustrated quantum spin chains.
 
-**Course:** Math 156 – Machine Learning (Fall 2025, UCLA)  
-
-## Contributions
-
-**Supervised CNN baseline** — the core model that validates the neural network architecture before deploying the full unsupervised VMC system.
-
-- **Physics-informed input engineering:** Designed a 3-channel `(3 × 14)` input tensor that embeds spin configurations alongside J1 and J2 coupling constants, enabling the model to learn local energy contributions tied to specific Hamiltonian parameters
-- **CNN architecture design:** Built a 1D-CNN with two convolutional layers + Global Average Pooling + MLP regression head, achieving translational invariance consistent with the physics of spin chains
-- **Dataset pipeline:** Generated 73,710 configurations via Exact Diagonalization across 9 (J1, J2) parameter pairs; implemented stratified 70/15/15 train-val-test splits
-- **Training & evaluation:** Trained with Adam optimizer (MSE loss), achieving a test RMSE of **0.1399** — a 24.4× improvement over baseline, capturing **99.8% of energy variance**
-- **Validated the architecture** as a suitable ansatz for the subsequent unsupervised VMC phase
-- Also contributed to **unsupervised CNN training logic and debugging**
-
----
-
 ## 🌌 Project Overview
 
 Simulating quantum systems is computationally hard because the state space grows exponentially with system size (2^N). This "Curse of Dimensionality" blocks exact simulation beyond ~40 particles.
